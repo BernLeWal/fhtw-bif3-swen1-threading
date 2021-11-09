@@ -16,7 +16,7 @@ namespace ThreadingDemos
             return $"calculated value {value}";
         }
 
-        public void RunDemo()
+        public void CalculateValues()
         {
             // start tasks
             for( int i=0; i < MaxResult; i++ ) {
@@ -42,10 +42,10 @@ namespace ThreadingDemos
             }
         }
 
-        public static void Demo()
+        public static void RunDemo()
         {
             PollingDemo pd = new PollingDemo();
-            pd.RunDemo();
+            pd.CalculateValues();
         }
     }
 }

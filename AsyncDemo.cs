@@ -21,16 +21,21 @@ namespace ThreadingDemos
             Thread.Sleep(300);
         }
 
-        public static void Demo()
-        //public static async Task Demo()
+        public static void RunDemo() // without async
         {
             AsyncDemo ad = new AsyncDemo();
-            //Task<object> task = ad.RunAsyncCalls();
             ad.SyncMethod1();
-            ad.SyncMethod2();   //
-            ad.SyncMethod3();   //
-            //object result = await task;
-            //Console.WriteLine(result);
+            ad.SyncMethod2();   
+            ad.SyncMethod3();  
+        }
+
+        public static async Task RunDemoAsync()
+        {
+            AsyncDemo ad = new AsyncDemo();
+            Task<object> task = ad.RunAsyncCalls();
+            ad.SyncMethod1();
+            object result = await task;
+            Console.WriteLine(result);
         }
 
         private async Task<string> AsyncMethod() {

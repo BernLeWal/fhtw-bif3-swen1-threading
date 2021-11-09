@@ -10,15 +10,21 @@ namespace ThreadingDemos
         static async Task Main(string[] args)
         {
             Console.WriteLine("Threading Demos!");
+            Console.WriteLine("==============================================");
 
-            //RaceConditionDemo.RunThreadsDemo();
-            //RaceConditionDemo.RunTasksDemo();
+            RaceConditionDemo.RunThreadsDemo();
+            RaceConditionDemo.RunTasksDemo();
+            Console.WriteLine("==============================================");
 
-            //LimitationsDemo.RunDemo();
+            LimitationsDemo.RunDemo();
+            Console.WriteLine("==============================================");
 
-            //PollingDemo.RunDemo();
+            PollingDemo.RunDemo();
+            Console.WriteLine("==============================================");
 
-            // /*await*/ AsyncDemo.Demo();
+            AsyncDemo.RunDemo();
+            await AsyncDemo.RunDemoAsync();
+            Console.WriteLine("==============================================");
 
             ProducerConsumerDemo.RunDemo();
         }
